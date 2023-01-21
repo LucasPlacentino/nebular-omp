@@ -1,5 +1,5 @@
 # Nebula - Lucas' [oh-my-posh](https://ohmyposh.dev/) theme
 
 ![nebula](https://user-images.githubusercontent.com/23436953/213890338-405346fd-b498-40bc-80fe-e6b879e6b96b.png)
-
+font: [CaskaydiaCove NF Mono](https://www.nerdfonts.com/font-downloads#caskaydia) - Medium weight  
 > based on [velvet](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/velvet.omp.json)
