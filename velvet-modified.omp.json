@@ -53,6 +53,20 @@
           "type": "git"
         },
         {
+          "foreground": "#EFDCF9",
+          "background": "#4c1f5e",
+          "style": "diamond",
+          "template": " {{ round .PhysicalPercentUsed .Precision }}% ",
+          "type": "sysinfo"
+        },
+        {
+          "foreground": "#EFDCF9",
+          "background": "#4c1f5e",
+          "style": "diamond",
+          "template": "{{ (div ((sub .PhysicalTotalMemory .PhysicalFreeMemory)|float64) 1000000000.0) }}/{{ (div .PhysicalTotalMemory 1000000000.0) }}GB -",
+          "type": "sysinfo"
+        },
+        {
           "background": "#4c1f5e",
           "foreground": "#EFDCF9",
           "powerline_symbol": "\ue0b4",
@@ -60,7 +74,7 @@
             "always_enabled": true
           },
           "style": "powerline",
-          "template": " {{ .FormattedMs }} ",
+          "template": "{{ .FormattedMs }} ",
           "type": "executiontime"
         },
         {
