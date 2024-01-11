@@ -17,7 +17,7 @@
             "manjaro": "\uf312",
             "opensuse": "\uf314",
             "ubuntu": "\uf31b",
-            "windows": "\uf17a"
+            "windows": "\ue62a"
           },
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} {{ .UserName }}@{{ .HostName }} ",
@@ -76,6 +76,14 @@
           "style": "powerline",
           "template": "{{ .FormattedMs }} ",
           "type": "executiontime"
+        },
+        {
+          "type": "docker",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "foreground": "#EFDCF9",
+          "background": "#170B3B",
+          "template": " \udb82\udc68 {{ .Context }} "
         },
         {
           "background": "#69307A",
@@ -173,8 +181,26 @@
           },
           "style": "diamond",
           "template": " {{ .CurrentDate | date .Format }} ",
-          "trailing_diamond": "\ue0b4",
           "type": "time"
+        },
+        {
+          "type": "battery",
+          "style": "powerline",
+          "foreground": "#EFDCF9",
+          "background": "#4c1f5e",
+          "background_templates": [
+            "{{if eq \"Charging\" .State.String}}#69307A{{end}}",
+            "{{if eq \"Discharging\" .State.String}}#170B3B{{end}}",
+            "{{if eq \"Full\" .State.String}}#4c1f5e{{end}}",
+            "{{if le 20.0 .Percentage}}##7d0000{{end}}"
+          ],
+          "template": " {{ if not .Error }}{{ .Icon }} {{ .Percentage }}{{ end }} ",
+          "properties": {
+            "discharging_icon": "\udb80\udc7e",
+            "charging_icon": "\udb80\udc84",
+            "charged_icon": "\udb85\udfe2"
+          },
+          "powerline_symbol": "\ue0b4"
         },
         {
           "foreground": "#EFDCF9",
